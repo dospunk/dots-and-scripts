@@ -8,4 +8,3 @@ alias ".."='cd ..'
 
 PATH="~/bin:$PATH"
 
-source ~/.commacd.bash
