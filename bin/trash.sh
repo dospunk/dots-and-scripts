@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d ~/.trash ] ; then
+    echo "no trash folder!"
+fi
+
 if [ "$1" = "empty" ] ; then
     echo -n "Are you sure? this action can't be undone! [y/n]"
     read yn
