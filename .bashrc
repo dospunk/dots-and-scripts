@@ -17,6 +17,7 @@ alias lab='sh lab.sh'
 alias ".."='cd ..'
 alias "cd.."='cd ..'
 alias "cls"='clear'
+alias "clean"='make clean'
 
 export PATH=~/bin:$PATH
 
