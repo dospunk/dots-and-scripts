@@ -10,15 +10,15 @@ export LD_LIBRARY_PATH=$GCC_HOME/lib64:$LD_LIBRARY_PATH
 export PATH=$GDB_HOME/bin:$GCC_HOME/bin:$PATH
 ########################################################
 
-alias ls='ls -l --color=auto'
-alias trash='sh trash.sh'
-alias untrash='sh trash.sh un'
-alias lab='sh lab.sh'
+alias ls='/bin/ls -l --color=auto'
+alias trash='/bin/bash trash.sh'
+alias untrash='/bin/bash trash.sh un'
+alias lab='/bin/bash lab.sh'
 alias ".."='cd ..'
 alias "cd.."='cd ..'
 alias "cls"='clear'
 alias "clean"='make clean'
 
-export PATH=~/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 export PS1="\u@\w\\$ "
