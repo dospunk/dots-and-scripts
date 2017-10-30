@@ -1,0 +1,104 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'.source.cpp':
+	'Basic skeleton':
+		'prefix': 'setup'
+		'body': """
+			#include <iostream>
+
+			${1:using namespace std;}
+
+			int main() {
+			\t$2
+				return 0;
+			}
+		"""
+	'Javadoc style comment':
+		'prefix': 'doc'
+		'body': """
+			/**
+			 * ${1:desc.}
+			 * ${2:@param var desc}
+			 * ${3:@return desc}
+			 */
+		"""
+	'File documentation':
+		'prefix': 'filedoc'
+		'body': """
+			/**
+			 * @file $1.${2:cpp}
+			 */
+		"""
+	'If Macro is defined':
+		'prefix': 'ifdef'
+		'body': """
+			#ifdef ${1:NDEBUG}
+			${2:cout << }
+			#endif
+		"""
+	'If Macro is not defined':
+		'prefix': 'ifndef'
+		'body': """
+			#ifndef $1
+			$2
+			#endif
+		"""
+	'Test':
+		'prefix': 'test'
+		'body': """
+			{//test ${1:function_name}
+				assert(${2:a == b});
+				#ifdef NDEBUG
+					cout << ${3:"something" << endl};
+				#endif
+			}
+		"""
+
+'.source.makefile':
+	'Clean Step':
+		'prefix': 'rm'
+		'body': 'rm -f $1'
+	'New Compilation and Linking Step':
+		'prefix': 'file'
+		'body': """
+			$1: $1.o
+				$(CC) $(LFLAGS) $1.o -o $1
+
+			$1.o: $1.cpp
+				$(CC) $(CFLAGS) $1.cpp
+		"""
+	'New Linking Step':
+		'prefix': 'ofile'
+		'body': """
+			$1.o: $1.cpp
+				$(CC) $(CFLAGS) $1.cpp
+		"""
+	'Flags from CSCI1730':
+		'prefix': 'flags'
+		'body': """
+			#Link flags
+			LFLAGS = -Wall
+			#Compile flags
+			CFLAGS = -c -Wall -std=c++14 -g -O0 -pedantic-errors
+			CC = g++
+		"""
