@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! -d ~/.trash ] ; then
-    echo "no trash folder!"
+    mkdir ~/.trash
 fi
+
+cd "$PWD"
 
 if [ "$1" = "empty" ] ; then
     echo -n "Are you sure? this action can't be undone! [y/n]"
@@ -16,4 +18,3 @@ elif [ "$1" = "un" ] ; then
 else 
     mv "$1" ~/.trash
 fi
-

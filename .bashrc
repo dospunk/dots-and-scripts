@@ -119,3 +119,4 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ] ; then source /etc/profile.d/vte.sh; fi # U
 
 export TONCCODE="/home/connor/Games/gameboy/GBA_homebrew/tonc_code"
 export PATH=$PATH:~/.bin
+
